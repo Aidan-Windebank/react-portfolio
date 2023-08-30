@@ -8,6 +8,8 @@ import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+
 // import './App.css'
 
 // imported page components
@@ -27,8 +29,8 @@ export default function App() {
           <Container fluid>
             <Row>
               <Col>
-                <h1>Aidan Windebank</h1>
-                <h3>Junior Software Developer</h3>
+                <h2>Aidan Windebank</h2>
+                <h5>Junior Software Developer</h5>
               </Col>
               <Col>
                 <Nav className="justify-content-end" activeKey="/home">
@@ -60,7 +62,19 @@ export default function App() {
         </BrowserRouter>
         
         <footer>
-          <h3>Links to My Apps</h3>
+
+        <Container fluid="md" className='text-center'>
+          <Row >
+            <Col >
+              <Button href="#" className="m-3">GitHub</Button> 
+              <Button href="#" className="m-3">LinkedIn</Button> 
+            </Col>
+          </Row>
+        </Container>
+
+
+        
+        
 
         </footer>
       </div>

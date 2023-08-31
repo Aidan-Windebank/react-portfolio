@@ -1,6 +1,7 @@
 // packages and library imports
 import {Routes, Route, BrowserRouter } from 'react-router-dom';
 import { useState } from 'react';
+import './App.css';
 
 // imported bootstrap components
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,7 +11,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
-// import './App.css'
+
 
 // imported page components
 import AboutMe from './components/AboutMe';
@@ -24,7 +25,7 @@ export default function App() {
 
   return (
     <>
-      <div>
+      <div >
         <header>
           <Container fluid>
             <Row>
@@ -51,7 +52,6 @@ export default function App() {
             </Row>
           </Container>  
         </header>
-
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<AboutMe/>} />
@@ -60,9 +60,7 @@ export default function App() {
             <Route path='/contact-me' element={<ContactMe/>} />
           </Routes>
         </BrowserRouter>
-        
         <footer>
-
         <Container fluid="md" className='text-center'>
           <Row >
             <Col >
@@ -71,11 +69,6 @@ export default function App() {
             </Col>
           </Row>
         </Container>
-
-
-        
-        
-
         </footer>
       </div>
     </>

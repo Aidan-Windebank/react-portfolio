@@ -7,6 +7,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 const contact = {
@@ -56,37 +59,45 @@ export default function contactForm(props) {
   return (
     <>
 
-      <h3>Contact Me</h3>
+      <Container fluid>
+        <Row className="m-5">
+          <Col xxl={3} >
+            <h3>Contact Me</h3>
+          </Col>
+          <Col xxl={9}>
+            <Form>
+              <Form.Group className="mb-3" controlId="formBasicName">
+                <Form.Label>Name:</Form.Label>
+                <Form.Control type="text" placeholder="John Smith" value={contactData.name} onChange={handleInputChange} name="name"/>
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email:</Form.Label>
+                <Form.Control type="email" placeholder="Enter your email"value={contactData.email} onChange={handleInputChange} name="email"/>
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicMessage">
+                <Form.Label>Message:</Form.Label>
+                <Form.Control type="text" placeholder='Enter message here' value={contactData.message} onChange={handleInputChange} name='message'/>
+                <Form.Text>
+                
+                </Form.Text>
+              </Form.Group>
+              <Button variant="primary" type="submit" onClick={submitForm}>Submit</Button>
 
-      <Form>
+              {alertState.type.length > 0 && ( 
+              <Alert variant={alertState.type} className= "mt-2">
+                {alertState.message}
+              </Alert>
+              )}
+            </Form>
+          </Col>
+        </Row>
+      </Container>
 
-        <Form.Group className="mb-3" controlId="formBasicName">
-          <Form.Label>Name:</Form.Label>
-          <Form.Control type="text" placeholder="John Smith" value={contactData.name} onChange={handleInputChange} name="name"/>
-        </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email:</Form.Label>
-          <Form.Control type="email" placeholder="Enter your email"value={contactData.email} onChange={handleInputChange} name="email"/>
-        </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicMessage">
-          <Form.Label>Message:</Form.Label>
-          <Form.Control type="text" placeholder='Enter message here' value={contactData.message} onChange={handleInputChange} name='message'/>
-          <Form.Text>
-           
-          </Form.Text>
-        </Form.Group>
+      
 
-        <Button variant="primary" type="submit" onClick={submitForm}>Submit</Button>
-
-        {alertState.type.length > 0 && ( 
-        <Alert variant={alertState.type} className= "mt-2">
-          {alertState.message}
-        </Alert>
-        )}
-
-      </Form>
+      
     </>
   )
 }

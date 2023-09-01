@@ -2,11 +2,59 @@
   /* max-width: 1280px; */
   /* min-height: 100%; */
   /* position: relative; */
-  margin: 0 auto;
-  padding: 1rem;
+  margin: 1rem;
+  /* padding: 1rem; */
 }
 
 
+#header {
+  /* background-color: rgb(95, 161, 75); */
+  /* color:rgb(231, 231, 201) */
+  
+}
 
+#footer {
+  /* background-color: rgb(95, 161, 75); */
+  /* position: fixed; */
+  /* bottom: 0; */
+  /* left: 0; */
+  width: 100%;
+  
+}
 
+#body {
+  /* background-color: rgb(202, 16, 16); */
+  /* min-height: 80vh; */
 
+}
+
+#git-button {
+  font-size: 40px;
+}
+
+#linked-button {
+  font-size: 40px;
+}
+
+#project-git-button {
+  font-size: 20px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#project-link-button {
+  font-size: 20px;
+  position: absolute;
+  bottom: 0;
+  right: 60px;
+}
+
+#portfolio-aside {
+  
+}
+
+.selected {
+  border: 2px solid rgb(0, 119, 255);
+  border-radius: 5px;
+}

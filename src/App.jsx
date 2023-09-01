@@ -26,39 +26,38 @@ export default function App() {
     const currentUrl = window.location.href;
     const splitURL = currentUrl.split("/");
     setCurrentPage(splitURL[splitURL.length-1])
-  
   })
 
   return (
     <>
-      <div >
+      <div id="body" >
         <header id="header">
           <Container fluid>
             <Row>
-              <Col>
+              <Col id="header-name">
                 <h2>Aidan Windebank</h2>
                 <h6>Junior Software Developer</h6>
               </Col>
               <Col>
                 <Nav className="justify-content-end" activeKey="/home">
-                  <Nav.Item className={currentPage == "" ? "selected": ""}>
-                    <Nav.Link href="/">About Me</Nav.Link>
+                  <Nav.Item id="nav-button" className={currentPage == "" ? "selected": ""}>
+                    <Button variant="secondary" href="/">About Me</Button>
                   </Nav.Item>
-                  <Nav.Item className={currentPage == "portfolio" ? "selected": ""}>
-                    <Nav.Link href="/portfolio">Portfolio</Nav.Link>
+                  <Nav.Item id="nav-button" className={currentPage == "portfolio" ? "selected": ""}>
+                    <Button variant="secondary" href="/portfolio">Portfolio</Button>
                   </Nav.Item>
-                  <Nav.Item className={currentPage == "resume" ? "selected": ""}>
-                    <Nav.Link href="/resume">Resume</Nav.Link>
+                  <Nav.Item id="nav-button" className={currentPage == "resume" ? "selected": ""}>
+                    <Button variant="secondary" href="/resume">Resume</Button>
                   </Nav.Item>
-                  <Nav.Item className={currentPage == "contact-me" ? "selected": ""}>
-                    <Nav.Link href="/contact-me">Contact Me</Nav.Link>
+                  <Nav.Item id="nav-button" className={currentPage == "contact-me" ? "selected": ""}>
+                    <Button variant="secondary" href="/contact-me">Contact Me</Button>
                   </Nav.Item>
                 </Nav>
               </Col>
             </Row>
           </Container>  
         </header>
-        <div id="body">
+        <div >
           <BrowserRouter>
             <Routes>
               <Route path='/' element={<AboutMe/>} />
@@ -71,9 +70,9 @@ export default function App() {
         <footer id="footer">
         <Container fluid="md" className='text-center'>
           <Row >
-            <Col >
-              <Button href="https://github.com/Aidan-Windebank"  target="_blank" className="m-3"><i id="git-button" className="fa-brands fa-github"></i></Button> 
-              <Button href="https://www.linkedin.com/in/aidan-windebank-a71740288/"  target="_blank" className="m-3"><i id="linked-button" className="fa-brands fa-linkedin"></i></Button> 
+            <Col className="d-flex flex-row justify-content-center" >
+              <Nav.Link href="https://github.com/Aidan-Windebank"  target="_blank" className="m-3"><i id="git-button" className="fa-brands fa-github"></i></Nav.Link> 
+              <Nav.Link href="https://www.linkedin.com/in/aidan-windebank-a71740288/"  target="_blank" className="m-3"><i id="linked-button" className="fa-brands fa-linkedin"></i></Nav.Link> 
             </Col>
           </Row>
         </Container>

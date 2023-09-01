@@ -1,7 +1,6 @@
 // pacakages and library imports
 import { useState } from 'react';
 
-
 // Bootstrap imports
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from 'react-bootstrap/Button';
@@ -21,19 +20,15 @@ const contact = {
 export default function contactForm(props) {
 
   const [contactData, setContactData] = useState(contact)
-  // const [ stateState, setStateState ] = useState("")
-  // const [ formState, setFormState ] = useState("")
   const [alertState, setAlertState] = useState({ type: "", message: "" })
-
 
   function handleInputChange(e) {
     e.preventDefault()
     setAlertState({ type: "", message: "" })
     setContactData({ ...contactData, [e.target.name]: e.target.value })
-    console.log(contactData)
   }
 
-  function submitForm(e) {
+  function checkForm(e) {
     e.preventDefault();
 
     let errorFound = false;
@@ -51,48 +46,42 @@ export default function contactForm(props) {
 
 
     if (errorFound === false) {
-      setAlertState({ type: "success", message: "Your infromation has been submitted!" })
-
-      // setFormState(userData)  // ok to submit
+      setAlertState({ type: "warning", message: "Your infromation has been submitted!" })
+      setContactData(contact) 
+      setAlertState({ type: "", message: "" })
+      errorFound = false
     } else {
       if (emailInvalid == true){
-        setAlertState({ type: "danger", message: "Please fill in a valid email" }) // not ok to submit
+        setAlertState({ type: "warning", message: "Please fill in a valid email" }) 
       } else {
-        setAlertState({ type: "danger", message: "You did not fill out all form fields" }) // not ok to submit
+        setAlertState({ type: "warning", message: "You did not fill out all form fields" }) 
       }
-
     }
-    console.log(contactData)
   }
-
 
 
   return (
     <>
-
       <Container fluid>
         <Row className="m-5">
-          <Col xxl={3} >
+          <Col lg={2} >
             <h3>Contact Me</h3>
           </Col>
-          <Col xxl={9}>
+          <Col lg={10}>
             <Form>
               <Form.Group className="mb-3" controlId="formBasicName">
                 <Form.Label>Name:</Form.Label>
-                <Form.Control type="text" placeholder="John Smith" value={contactData.name} onChange={handleInputChange} onBlur={submitForm} name="name" />
+                <Form.Control type="text" placeholder="Enter Name" value={contactData.name} onChange={handleInputChange} onBlur={checkForm} name="name" />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email:</Form.Label>
-                <Form.Control type="email" placeholder="Enter your email" value={contactData.email} onChange={handleInputChange} onBlur={submitForm} name="email" />
+                <Form.Control type="email" placeholder="Enter Email" value={contactData.email} onChange={handleInputChange} onBlur={checkForm} name="email" />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicMessage">
                 <Form.Label>Message:</Form.Label>
-                <Form.Control type="text" placeholder='Enter message here' value={contactData.message} onChange={handleInputChange} onBlur={submitForm} name='message' />
-                <Form.Text>
-
-                </Form.Text>
+                <Form.Control type="text" as="textarea" rows={5} placeholder='Enter Message' value={contactData.message} onChange={handleInputChange} onBlur={checkForm} name='message' />
               </Form.Group>
-              <Button variant="primary" type="submit" onClick={submitForm}>Submit</Button>
+              <Button variant="secondary" type="submit" >Submit</Button>
 
               {alertState.type.length > 0 && (
                 <Alert variant={alertState.type} className="mt-2">
@@ -103,12 +92,6 @@ export default function contactForm(props) {
           </Col>
         </Row>
       </Container>
-
-
-
-
-
-
     </>
   )
 }

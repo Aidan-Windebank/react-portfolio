@@ -1,28 +1,20 @@
-
-
-
-
-
 // bootstrap imports
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import Nav from 'react-bootstrap/Nav';
 
 
-
-function Project({project}) {
+export default function Project({project}) {
   return (
-    <Card style={{ width: "25rem" }} className="m-3">
-      <Card.Img src={project.img} alt="portfolio project" />
-      <Card.ImgOverlay>
-        <Card.Title>{project.title}</Card.Title>
-        <Card.Text>{project.description}</Card.Text>
-        <Button href={project.url} className="m-3" id="project-link-button"><i className="fa-solid fa-link"></i></Button>
-        <Button href={project.github} className="m-3" id="project-git-button"><i className="fa-brands fa-github"></i></Button>
+    <Card style={{ width: "25rem", border: "4px solid rgb(250, 239, 141)" }} className="m-3 p-0" id="card-image">
+      <Card.Img src={project.img} alt="portfolio project" style={{ width: "100%", height: "100%"}}/>
+      <Card.ImgOverlay className="image-overlay">
+        <Card.Title id="card-title">{project.title}</Card.Title>
+        <Card.Text id="card-text">{project.description}</Card.Text>
+        <Nav.Link href={project.url} target="_blank" className="m-3" id="project-link-button"><i className="fa-solid fa-link"></i></Nav.Link>
+        <Nav.Link href={project.github} target="_blank" className="m-3" id="project-git-button"><i className="fa-brands fa-github"></i></Nav.Link>
       </Card.ImgOverlay>
     </Card>
   );
 }
-
-export default Project;

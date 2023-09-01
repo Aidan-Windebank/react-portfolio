@@ -1,60 +1,95 @@
+/* global CSS */
 #root {
-  /* max-width: 1280px; */
-  /* min-height: 100%; */
-  /* position: relative; */
-  margin: 1rem;
-  /* padding: 1rem; */
+  min-height: 100%;
+}
+:root {
+  background-color: rgb(50, 50, 50);
 }
 
 
+/* main component CSS */
 #header {
-  /* background-color: rgb(95, 161, 75); */
-  /* color:rgb(231, 231, 201) */
-  
+  color: rgb(250, 239, 141);
+  background-color: rgb(25, 25, 25);
 }
-
-#footer {
-  /* background-color: rgb(95, 161, 75); */
-  /* position: fixed; */
-  /* bottom: 0; */
-  /* left: 0; */
-  width: 100%;
-  
+#header-name {
+  margin: .5rem;
 }
-
+#nav-button {
+  margin-right: 1rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
 #body {
-  /* background-color: rgb(202, 16, 16); */
-  /* min-height: 80vh; */
-
+  background-color: rgb(50, 50, 50);
+  color: rgb(250, 239, 141);
+  min-height: 100%;
 }
-
 #git-button {
   font-size: 40px;
+  color: rgb(250, 239, 141);
 }
-
 #linked-button {
   font-size: 40px;
+  color: rgb(250, 239, 141);
+}
+.selected {
+  border: 2px solid rgb(250, 239, 141);
+  border-radius: 7px;
 }
 
+
+/* portfolio page CSS */
 #project-git-button {
-  font-size: 20px;
+  font-size: 30px;
+  color: rgb(50, 50, 50);
   position: absolute;
   bottom: 0;
   right: 0;
 }
-
 #project-link-button {
-  font-size: 20px;
+  font-size: 30px;
+  color: rgb(50, 50, 50);
   position: absolute;
   bottom: 0;
-  right: 60px;
+  right: 50px;
 }
-
-#portfolio-aside {
-  
+#card-title {
+  color: rgb(50, 50, 50);
+  font-size: 25px;
+  font-weight: 750;
 }
-
-.selected {
-  border: 2px solid rgb(0, 119, 255);
-  border-radius: 5px;
+#card-text {
+  color: rgb(50, 50, 50);
+  font-size: 15px;
+  font-weight: 750;
+}
+/* card image hover effects */
+#card-title {
+  display: none;
+}
+#card-image:hover #card-title {
+  display: block;
+}
+#card-text {
+  display: none;
+}
+#card-image:hover #card-text {
+  display: block;
+}
+#project-link-button {
+  display: none;
+}
+#card-image:hover #project-link-button{
+  display: block;
+}
+#project-git-button {
+  display: none;
+}
+#card-image:hover #project-git-button {
+  display: block;
+}
+#card-image:hover >*:not(.card-img-overlay) {
+  filter: blur(10px);
+  opacity: 0.5;
 }

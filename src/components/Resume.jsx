@@ -1,7 +1,6 @@
 
 
 
-
 //bootstrap imports
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from 'react-bootstrap/Container';
@@ -12,17 +11,16 @@ import Nav from 'react-bootstrap/Nav';
 
 export default function Resume (){
 
-
   return (
     <>
       <Container fluid>
         <Row className="m-5">
-          <Col xxl={3} >
+          <Col md={3} id="resume-aside" >
             <h3>Resume</h3>
             <Nav.Link href="">Download Resume PDF</Nav.Link>
           </Col>
-          <Col xxl={9}>
-            <h4>Foundational Principles</h4>
+          <Col md={9}>
+            <h4>Foundational Skills</h4>
               <ul>
                 <li>HTML/CSS/Git</li>
                 <li>JavaScript</li>
@@ -33,7 +31,7 @@ export default function Resume (){
                 <li>JSON</li>
                 <li>AJAX</li>
               </ul>
-              <h4>Technical Principles</h4>
+              <h4>Technical Skills</h4>
               <ul>
                 <li>Node</li>
                 <li>ES6</li>
@@ -45,7 +43,7 @@ export default function Resume (){
                 <li>Testing</li>
                 <li>Agile Development</li>
               </ul>
-              <h4>Current Performance Principles</h4>
+              <h4>Current Performance Skills</h4>
               <ul>
                 <li>Progressive Web Apps</li>
                 <li>React</li>

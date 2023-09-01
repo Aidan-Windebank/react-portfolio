@@ -1,16 +1,16 @@
-
-
-
 // bootstrap imports
 import "bootstrap/dist/css/bootstrap.min.css";
-// import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 //image imports for individual projects
-import placeholder from '../assets/images/placeholder.png';
 import recipeFinder from '../assets/images/recipeFinder.png';
+import hometownClassifieds from '../assets/images/hometownClassifieds.png';
+import eBackEnd from '../assets/images/eBackEnd.png';
+import socialAPI from '../assets/images/socialAPI.png';
+import textEditor from '../assets/images/textEditor.png';
+import employeeTracker from '../assets/images/employeeTracker.png';
 
 //import project component
 import Project from "./Project";
@@ -18,48 +18,49 @@ import Project from "./Project";
 
 export default function Portfolio (){
 
+  // array of objects to insert any project into portfolio page cards
 const portfolioData = [
   {
     title: "Recipe Finder",
     img: recipeFinder,
-    description: "Recipe Finder using Web API",
+    description: "Web API Application",
     url: "https://ascolardi.github.io/group-project1/",
     github: "https://github.com/Aidan-Windebank/recipe-finder"
   },
   {
-    title: "project-2",
-    img: placeholder,
-    description: "short description",
-    url: "site URL",
-    github: "https://github.com/Aidan-Windebank"
+    title: "Hometown Classifieds",
+    img: hometownClassifieds,
+    description: "Free and easy to use classifieds page",
+    url: "https://project2-hometown-classifieds-ab97edeca766.herokuapp.com/",
+    github: "https://github.com/Aidan-Windebank/group-project-2"
   },
   {
-    title: "project-3",
-    img: placeholder,
-    description: "short description",
-    url: "site URL",
-    github: "https://github.com/Aidan-Windebank"
+    title: "E-Commerce Back End",
+    img: eBackEnd,
+    description: "Back-End routing for e-commerce store",
+    url: "https://drive.google.com/file/d/1nTLFRpEk5yVn0jZlL3WN3fIlDcFJ4DEX/view",
+    github: "https://github.com/Aidan-Windebank/e-commerce-back-end"
   },
   {
-    title: "project-4",
-    img: placeholder,
-    description: "short description",
-    url: "site URL",
-    github: "https://github.com/Aidan-Windebank"
+    title: "Social Network API",
+    img: socialAPI,
+    description: "Back-End API for a social network app",
+    url: "https://drive.google.com/file/d/1V6q0ZZEj76pE4A_Gg8k011PENBdCm3Z_/view",
+    github: "https://github.com/Aidan-Windebank/social-network-api"
   },
   {
-    title: "project-5",
-    img: placeholder,
-    description: "short description",
-    url: "site URL",
-    github: "https://github.com/Aidan-Windebank"
+    title: "Text Editor",
+    img: textEditor,
+    description: "Text editor showcasing use of PWAs",
+    url: "https://aidan-text-editor-d192508be719.herokuapp.com/",
+    github: "https://github.com/Aidan-Windebank/text-editor"
   },
   {
-    title: "project-6",
-    img: placeholder,
-    description: "short description",
-    url: "site URL",
-    github: "https://github.com/Aidan-Windebank"
+    title: "Employee Tracker",
+    img: employeeTracker,
+    description: "Content management system utilizing MySQL and Node JS",
+    url: "https://drive.google.com/file/d/1NP1BDkCGm5SsnyyjduInSxksP2AAp2ZV/view",
+    github: "https://github.com/Aidan-Windebank/employee-tracker"
   },
 ]
 

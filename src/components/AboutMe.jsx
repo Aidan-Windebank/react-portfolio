@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 // import portfolio photo
-import aidan from "../assets/images/aidan.jpg"
+import aidan3 from "../assets/images/aidan3.jpg"
 
 
 export default function AboutMe (){
@@ -15,7 +15,7 @@ export default function AboutMe (){
       <Container fluid>
         <Row className="m-5" >
           <Col lg={4}>
-            <img id="aboutMe-image" src={aidan} alt="placeholder image" style={{ width: "100%" }}/>
+            <img id="aboutMe-image" src={aidan3} alt="placeholder image" style={{ width: "100%" }}/>
           </Col>
           <Col lg={8}>
             <h3>About Me</h3>

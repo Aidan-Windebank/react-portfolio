@@ -1,6 +1,3 @@
-
-
-
 //bootstrap imports
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from 'react-bootstrap/Container';
@@ -18,6 +15,7 @@ export default function Resume (){
           <Col md={3} id="resume-aside" >
             <h3>Resume</h3>
             <Nav.Link href="">Download Resume PDF</Nav.Link>
+            <p></p>
           </Col>
           <Col md={9}>
             <h4>Foundational Skills</h4>

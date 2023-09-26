@@ -9,7 +9,7 @@ import recipeFinder from '../assets/images/recipeFinder.png';
 import hometownClassifieds from '../assets/images/hometownClassifieds.png';
 import eBackEnd from '../assets/images/eBackEnd.png';
 import socialAPI from '../assets/images/socialAPI.png';
-import textEditor from '../assets/images/textEditor.png';
+import gardenApp from '../assets/images/gardenApp.png';
 import employeeTracker from '../assets/images/employeeTracker.png';
 
 //import project component
@@ -20,6 +20,13 @@ export default function Portfolio (){
 
   // array of objects to insert any project into portfolio page cards
 const portfolioData = [
+  {
+    title: "Garden Planner",
+    img: gardenApp,
+    description: "Minnesota Garden Planning App",
+    url: "https://minnegrowta-66ed74e127f3.herokuapp.com/",
+    github: "https://github.com/laurbaur024/minnegrowta"
+  },
   {
     title: "Recipe Finder",
     img: recipeFinder,
@@ -47,13 +54,6 @@ const portfolioData = [
     description: "Back-End API for a social network app",
     url: "https://drive.google.com/file/d/1V6q0ZZEj76pE4A_Gg8k011PENBdCm3Z_/view",
     github: "https://github.com/Aidan-Windebank/social-network-api"
-  },
-  {
-    title: "Text Editor",
-    img: textEditor,
-    description: "Text editor showcasing use of PWAs",
-    url: "https://aidan-text-editor-d192508be719.herokuapp.com/",
-    github: "https://github.com/Aidan-Windebank/text-editor"
   },
   {
     title: "Employee Tracker",

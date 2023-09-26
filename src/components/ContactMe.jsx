@@ -1,5 +1,7 @@
 // pacakages and library imports
 import { useState } from 'react';
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 // Bootstrap imports
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -59,6 +61,23 @@ export default function contactForm(props) {
     }
   }
 
+  // code to send emails from my form without backend service
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_9figy4u', 'template_m1ykx8q', form.current, 'x1DQXkt5XjYTlSh9d')
+      .then((result) => {
+          console.log(result.text);
+          setAlertState({ type: "success", message: "Email sent successfully!" });
+          setContactData(contact)
+
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
+
 
   return (
     <>
@@ -68,18 +87,18 @@ export default function contactForm(props) {
             <h3>Contact Me</h3>
           </Col>
           <Col lg={10}>
-            <Form>
+            <Form ref={form} onSubmit={sendEmail}>
               <Form.Group className="mb-3" controlId="formBasicName">
                 <Form.Label>Name:</Form.Label>
-                <Form.Control type="text" placeholder="Enter Name" value={contactData.name} onChange={handleInputChange} onBlur={checkForm} name="name" />
+                <Form.Control type="text" placeholder="Enter Name" value={form.name} onChange={handleInputChange} onBlur={checkForm} name="name" />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email:</Form.Label>
-                <Form.Control type="email" placeholder="Enter Email" value={contactData.email} onChange={handleInputChange} onBlur={checkForm} name="email" />
+                <Form.Control type="email" placeholder="Enter Email" value={form.email} onChange={handleInputChange} onBlur={checkForm} name="email" />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicMessage">
                 <Form.Label>Message:</Form.Label>
-                <Form.Control type="text" as="textarea" rows={5} placeholder='Enter Message' value={contactData.message} onChange={handleInputChange} onBlur={checkForm} name='message' />
+                <Form.Control type="text" as="textarea" rows={5} placeholder='Enter Message' value={form.message} onChange={handleInputChange} onBlur={checkForm} name='message' />
               </Form.Group>
               <Button variant="secondary" type="submit" >Submit</Button>
 

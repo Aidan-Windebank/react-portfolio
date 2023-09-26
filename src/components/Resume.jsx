@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
+import AidanWindebankResume from '../assets/images/AidanWindebankResume.pdf'
 
 
 export default function Resume (){
@@ -14,7 +15,7 @@ export default function Resume (){
         <Row className="m-5">
           <Col md={3} id="resume-aside" >
             <h3>Resume</h3>
-            <Nav.Link href="">Download Resume PDF</Nav.Link>
+            <Nav.Link href={AidanWindebankResume} target="_blank">Download Resume PDF</Nav.Link>
             <p></p>
           </Col>
           <Col md={9}>

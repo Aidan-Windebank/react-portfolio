@@ -15,7 +15,7 @@ export default function AboutMe (){
       <Container fluid>
         <Row className="m-5" >
           <Col lg={4}>
-            <img id="aboutMe-image" src={aidan3} alt="placeholder image" style={{ width: "100%" }}/>
+            <img id="aboutMe-image" src={aidan3} alt="portfolio image of aidan" style={{ width: "100%" }}/>
           </Col>
           <Col lg={8}>
             <h3>About Me</h3>
